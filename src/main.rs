@@ -2,23 +2,30 @@ fn main() {
     intro_to_u();
 }
 
-
-// function to encapsulate all integers
 fn intro_to_u() {
     let sum_result: u8 = sum(5, 10);
-    println!("the sum result is: {}", sum_result);   
-
-
+    println!("sum_result is: {}", sum_result);
+    let subtract_result: u8 = subtract(10, 5);
+    println!("subtract_result is: {}", subtract_result);
+    let multiply_result: u8 = multiply(5, 10);
+    println!("multiply_result is: {}", multiply_result);
+    let divide_result: u8 = divide(10, 5);
+    println!("divide_result is: {}", divide_result);
 }
 
-fn sum(x: u8, y: u8) -> u8 {
-    x + y // implicit return
-//    return x + y; // explicit return
+fn sum(a: u8, b: u8) -> u8 {
+    a + b //implicit return
+    //return a + b; //explicit return
 }
 
+fn subtract(a: u8, b: u8) -> u8 {
+    a - b
+}
 
-// subtract
-// multiplication
-// division
+fn multiply(a: u8, b: u8) -> u8 {
+    a * b
+}
 
-
+fn divide(a: u8, b: u8) -> u8 {
+    a / b
+}
