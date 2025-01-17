@@ -1,4 +1,3 @@
-
 fn main() {
     intro_to_u();
 }
@@ -22,6 +21,9 @@ fn intro_to_u() {
     println!("the float number result is {}", float_sum_result ); 
     let float_sub_result: f32 = float_sub(10.0, 4.0);
     println!("the float number result is {}", float_sub_result );
+    let combine_names_result: String = combine_names("benjamin", "Oche");
+    println!("The combine names{}", combine_names_result);
+
 }
 
 fn sum(x: u16, y: u16) -> u16 {
@@ -64,3 +66,6 @@ fn float_sub(x: f32, y: f32) -> f32 {
     x - y
 }
 
+fn combine_names(first_name: &str,last_name: &str) -> String {
+    format!("{} {}", first_name, last_name)
+}
