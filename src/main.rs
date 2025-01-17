@@ -18,7 +18,10 @@ fn intro_to_u() {
     println!("the sum to evem result is {}", sum_even_result ); 
     let is_even_result: bool = is_even_num(10, 5);
     println!("the is even num is {}", is_even_result ); 
-
+    let float_sum_result: f32 = float_sum(10.0, 5.0);
+    println!("the float number result is {}", float_sum_result ); 
+    let float_sub_result: f32 = float_sub(10.0, 4.0);
+    println!("the float number result is {}", float_sub_result );
 }
 
 fn sum(x: u16, y: u16) -> u16 {
@@ -51,5 +54,13 @@ fn is_even_num(x: u16, y: u16) -> bool {
     } else {
         false
     }
+}
+
+fn float_sum(x: f32, y: f32) -> f32 {
+    x + y
+}
+
+fn float_sub(x: f32, y: f32) -> f32 {
+    x - y
 }
 
