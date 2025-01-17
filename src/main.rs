@@ -1,5 +1,8 @@
+mod primitive_data_types;
+
 fn main() {
     intro_to_u();
+    primitive_data_types::intro_to_us();
 }
 
 
