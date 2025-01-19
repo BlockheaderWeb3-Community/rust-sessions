@@ -1,7 +1,14 @@
 fn main() {
     // intro_to_u();
     string_handler();
+    println!(".......................................................");
+    type_conversion();
+    println!(".......................................................");
+    signed_integers();
+    println!(".......................................................");
+    string_conversion();
 }
+
 
 // function to encapsulate all integers
 fn intro_to_u(){
@@ -89,20 +96,6 @@ fn convert_to_string_v2(x: &str) -> String {
    String::from(x)
 }
 
-=======
-// function that encapsulate all integers
-fn intro_to_u() {
-    // subtract
-    // multiplication
-    // division
-    let sum_result: u8 = sum(5, 10);
-    println!("the sum result is: {}", sum_result);
-}
-
-fn sum(x: u8, y: u8) -> u8 {
-    x + y // implicit return
-    //    return x + y; // explicit return
-}
 
 // handle all string-related functions
 fn string_handler() {
@@ -125,5 +118,60 @@ fn intro_to_ownable_string() {
     println!("ptr = address in heap memory: {:?}", name.as_ptr());
 }
 
+fn type_conversion(){
+    let sum_casting: u32 = sum_cast(50, 50);
+    println!("The sum of the two values is {}", sum_casting);
+    let product_casting: u8 = multiply_cast(10, 15);
+    println!("The product of the two values is {}", product_casting);
+}
+
+// Type casting 1
+fn sum_cast(x: u8, y: u8) -> u32 {
+    let result = x + y;
+    result as u32
+}
+
+// Type casting 2
+fn multiply_cast(p: u32, q: u32) -> u8 {
+    let answer = p * q;
+    answer as u8    
+}
+
+fn signed_integers(){
+let signed_sum: i8 = sum_signed(19, 19);
+let signed_subtraction: i8 = substract_signed(100, 50);
+let signed_multiplication: i8 = multiply_signed(10, 12);
+let signed_division: f32 = divide_signed(100, 18);
+println!("The sum of the two values is {}", signed_sum);
+println!("The difference between the two values is {}", signed_subtraction);
+println!("The product of the two values is {}", signed_multiplication);
+println!("The division of the two values is {}", signed_division);
+
+}
+
+fn sum_signed(a: i8, b: i8)-> i8{
+    a + b
+}
+fn substract_signed(a: i32, b:i32)-> i8{
+    return (a-b)as i8;
+}
+fn multiply_signed(a: i8, b: i8)-> i8{
+    a * b
+}
+fn divide_signed(a: i64, b: i64)-> f32{
+    return a as f32 / b as f32;
+}
+
+fn string_to_str(input: &String) -> &str{
+    input.as_str()
+}
+
+fn string_conversion(){
+    let string_input = String::from("My name is Wisdom Enyinnaya");
+    let referenced_string = string_to_str(&string_input);
+
+    println!("String: {}", string_input);
+    println!("&str: {}", referenced_string);
+}
 
 
