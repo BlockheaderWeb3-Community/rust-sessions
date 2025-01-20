@@ -1,80 +1,16 @@
-fn main() {
-    // intro_to_u();
-    string_handler();
-}
 
-// function to encapsulate all integers
-fn intro_to_u(){
-    let sum_result: u8 = sum(5, 10);
-    let mult_result: u64 = multiply(5, 10);
-    let divide: f64 = divide(20.0, 10.2);
-    let subtr: isize = substract(20, 10);
-    let check: bool = check_func(5, 10);
-    println!("Sum: {}", sum_result);
-    println!("Multiplication: {}", mult_result);
-    println!("Division: {}", divide);
-    println!("Substraction: {}", subtr);    
-    println!("Check: {}", check);
 
-    let sum_result: f64 = sumfp(5.0, 10.0);
-    let mult_result: f64 = multiply_fp(5.0, 10.0);
-    let divide: f64 = divide_fp(20.0, 10.2);
-    let subtr: f64 = substract_fp(20.0, 10.0);
-    println!("Sum: {}", sum_result);
-    println!("Multiplication: {}", mult_result);
-    println!("Division: {}", divide);
-    println!("Substraction: {}", subtr);
 
-    let full_name = string_formatting(convert_to_string_v1("Akinshola"), convert_to_string_v2("Akinniyi"));
+
+
+/////////////////////////////////////////Assignment 1
+
+fn name_format(){
+    let full_name = string_formatting(&convert_to_string_v1("Ebube"), &convert_to_string_v2("Onuora"));
     println!("Full Name: {}", full_name);
 }
 
-fn sum(x: u8, y: u8) -> u8 {
-    x + y
-}
-fn multiply(x: u64, y: u64) -> u64 {
-    x * y
-}
-fn divide(x: f64, y: f64) -> f64 {
-    let res: f64 = x / y;
-    return res
-}
-fn substract(x: isize, y: isize) -> isize {
-    x - y
-}
-
-fn sumfp(x: f64, y: f64) -> f64 {
-    x + y
-}
-
-fn multiply_fp(x: f64, y: f64) -> f64 {
-    x * y
-}
-
-fn divide_fp(x: f64, y: f64) -> f64 {
-    x / y
-}
-
-fn substract_fp(x: f64, y: f64) -> f64 {
-    x - y
-}
-
-fn check_func(num1: u8, num2: u8) -> bool {
-    let sum_of_two_nums = sum(num1, num2);
-    if sum_of_two_nums % 2 == 0 {
-        println!("The sum of {} and {} is even", num1, num2);
-        return true;
-    } else {
-        println!("The sum of {} and {} is odd", num1, num2);
-        return false;
-    }
-}
-
-// fn string_formatting(first_name: &str, last_name: &str) -> String {
-//     let full_name = format!("{} {}", first_name, last_name);
-//     return full_name;
-// }
-fn string_formatting(first_name: String, last_name: String) -> String {
+fn string_formatting(first_name: &str, last_name: &str) -> String {
     let full_name = format!("{} {}", first_name, last_name);
     return full_name;
 }
@@ -86,44 +22,118 @@ fn convert_to_string_v1(x: &str) -> String {
 
 // util fn version 2 to convert &str to String 
 fn convert_to_string_v2(x: &str) -> String {
-   String::from(x)
-}
-
-=======
-// function that encapsulate all integers
-fn intro_to_u() {
-    // subtract
-    // multiplication
-    // division
-    let sum_result: u8 = sum(5, 10);
-    println!("the sum result is: {}", sum_result);
-}
-
-fn sum(x: u8, y: u8) -> u8 {
-    x + y // implicit return
-    //    return x + y; // explicit return
-}
-
-// handle all string-related functions
-fn string_handler() {
-    // intro_to_str_slice();
-    intro_to_ownable_string();
-}
-
-// intro string slice
-// for fixed-sized strings
-fn intro_to_str_slice() {
-    let name: &str = "Sylvia";
-    println!("my name is {}", name)
-}
-
-fn intro_to_ownable_string() {
-    let mut name: String = String::from("Wisdom");
-    println!("first name: here: {}", name);
-    name.push_str(" John");
-    println!("final name: here: {}", name);
-    println!("ptr = address in heap memory: {:?}", name.as_ptr());
+    x.to_string()
 }
 
 
 
+
+
+
+////////////////////////////////////////////////Assignment 2
+fn main (){
+    name_format();
+    convert_low_to_high();
+    convert_high_to_low();
+    perform_operations();
+   
+}
+
+
+//Function to convert low integer to high integer u8 to u32
+fn convert_low_to_high(){
+    let low: u8 = 255; //A u8 value
+    let high: u32 = low as u32; //Covert u8 to u32
+    println!("u8 value: {}, u32 value:{}",low, high);
+
+}
+
+
+//Function to convert high bit integer to low bit integer u32 to u8
+    fn convert_high_to_low() {
+        let high: u32 = 300; // A u32 value
+        let low: u8 = high as u8; // Convert u32 to u8 with truncation
+        println!("u32 value: {}, u8 value: {}", high, low);
+    }
+
+//Implement arithmetic operations on signed integers
+
+fn perform_operations() {
+    let a: i32 = 25; // A signed 32-bit integer
+    let b: i32 = -10; // Another signed 32-bit integer
+
+    // Arithmetic operations
+    let sum = a + b; // Addition
+    let difference = a - b; // Subtraction
+    let product = a * b; // Multiplication
+    let quotient = a / b; // Division
+    let remainder = a % b; // Modulus (remainder)
+
+    println!("Arithmetic Operations on signed integers:");
+    println!("a = {}, b = {}", a, b);
+    println!("Sum: {}", sum);
+    println!("Difference: {}", difference);
+    println!("Product: {}", product);
+    println!("Quotient: {}", quotient);
+    println!("Remainder: {}", remainder);
+}
+
+//Explain the difference between the fp32 and fp64 data types
+
+     //The key difference between fp32 (32-bit floating-point) and fp64 (64-bit floating-point) lies in their precision and range:
+       
+       //1. Bit Size:
+              // fp32 (32-bit): Uses 32 bits to represent a floating-point number.
+              // fp64 (64-bit): Uses 64 bits, allowing for more precision and a larger range.
+        
+        // 2. Precision:
+               // fp32: Provides approximately 7 decimal digits of precision.
+              // fp64: Provides approximately 15-16 decimal digits of precision.
+              // Example: Calculations with very small differences or many decimal places will be more accurate with fp64.
+        
+        // 3. Range:
+               //fp32: Can represent numbers from approximately 1.4 x 10^-45 to 3.4 x 10^38.
+               //fp64: Can represent numbers from approximately 5.0 x 10^-324 to 1.8 x 10^308.
+               //fp64: Covers a wide range than fp32, making it suitable for scientific calculations or financial applications.
+
+        //4. Memory Usage:
+                 // 32: Uses less memory, making it faster for applications where precision isn't critical (e.g., graphics or simulations).
+                 // 64: Requires double the memory of fp32, which may impact performance or storage in large datasets.
+        
+        //5. Performance:
+                // 32: Faster due to smaller size, often used in real-time systems like games or machine learning models.
+               // 64: Slower but more precise, used in scientific computing, financial applications, or any domain requiring high precision.
+          
+        //6. When to Use:
+              // 32: Use when speed and memory efficiency are more important than precision (e.g., 3D graphics, neural networks).
+              // 64: Use when precision and range are crucial (e.g., scientific simulations, high-precision calculations).
+
+//Describe in details the role of pointers in memory management
+
+   //Pointers play a critical role in memory management in programming, particularly in low-level languages like C, C++, and systems programming languages such as Rust (though Rust manages pointers more safely). Here’s a detailed explanation of their roles:
+   
+    //1. Memory Address:
+        // Pointers store the memory address of a variable or data structure in the computer's memory. This address points to the location where the data is stored, allowing programs to access and manipulate it directly.
+
+    //2. Dynamic Memory Allocation:
+        // Pointers enable dynamic memory allocation, where programs can request memory from the heap at runtime and manage it using pointers. This allows for flexible memory usage and efficient storage of data structures like arrays, linked lists, and trees.
+
+    //3. Efficient Data Access:
+        // By using pointers, programs can directly access and modify data in memory without copying it, leading to faster and more efficient data processing. Pointers are crucial for tasks like iterating over arrays, traversing linked lists, or accessing hardware registers.
+
+    //4. Pass-by-Reference:
+        // Pointers enable pass-by-reference in function calls, where functions can modify variables in the calling scope by passing pointers to them. This allows for efficient sharing and manipulation of data across different parts of a program.
+
+    //5. Pointer Arithmetic:
+        // Pointers support arithmetic operations like addition, subtraction, and comparison, allowing for efficient memory traversal and manipulation. This is essential for tasks like iterating over arrays, implementing data structures, or working with complex data layouts.
+
+    //6. Memory Management:
+        // Pointers play a key role in memory management, allowing programs to allocate, deallocate, and reallocate memory dynamically. This helps optimize memory usage, prevent memory leaks, and manage resources efficiently in applications.
+
+    //7. Low-Level Programming:
+        // In low-level programming, pointers are essential for interacting with hardware, managing memory layouts, and implementing efficient algorithms. They provide direct access to memory locations, enabling fine-grained control over data and system resources.
+
+    //8. Pointer Safety:
+        // While pointers offer powerful capabilities, they can also introduce risks like null pointer dereferencing, memory leaks, and buffer overflows. Modern languages like Rust incorporate safety features to prevent common pointer-related errors and ensure memory safety.
+
+    //In summary, pointers are fundamental to memory management in programming, enabling efficient data access, dynamic memory allocation, pass-by-reference semantics, and low-level system interactions. Understanding and using pointers effectively is crucial for developing performant, memory-efficient, and reliable software applications.
