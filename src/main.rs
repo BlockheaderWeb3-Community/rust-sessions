@@ -1,5 +1,5 @@
 fn main() {
-    // intro_to_u();
+    intro_to_u();
     string_handler();
 }
 
@@ -27,6 +27,24 @@ fn intro_to_u(){
 
     let full_name = string_formatting(convert_to_string_v1("Akinshola"), convert_to_string_v2("Akinniyi"));
     println!("Full Name: {}", full_name);
+    let sum_result: u8 = sum(5, 10);
+    println!("the sum result is: {}", sum_result);
+    let high_int: u32 = high_integer_type_casting(5);
+    println!("High int: {}", high_int);
+    let low_int: u8 = low_integer_type_casting(5);
+    println!("Low int: {}", low_int);
+    let my_string = String::from("Hello, World");
+    let my_str = convert_string_to_str(&my_string);
+    println!("My string: {}", my_str);
+    let my_str = "Hello, World";
+    let my_string = convert_str_to_string(my_str);
+    println!("My string: {}", my_string);
+    let (addition, substraction, multiplication, division) = arithmetic_signed_ops(10, 5);
+    println!("Addition: {}", addition);
+    println!("Substraction: {}", substraction);
+    println!("Multiplication: {}", multiplication);
+    println!("Division: {}", division);
+    
 }
 
 fn sum(x: u8, y: u8) -> u8 {
@@ -89,20 +107,6 @@ fn convert_to_string_v2(x: &str) -> String {
    String::from(x)
 }
 
-=======
-// function that encapsulate all integers
-fn intro_to_u() {
-    // subtract
-    // multiplication
-    // division
-    let sum_result: u8 = sum(5, 10);
-    println!("the sum result is: {}", sum_result);
-}
-
-fn sum(x: u8, y: u8) -> u8 {
-    x + y // implicit return
-    //    return x + y; // explicit return
-}
 
 // handle all string-related functions
 fn string_handler() {
@@ -126,4 +130,29 @@ fn intro_to_ownable_string() {
 }
 
 
+fn high_integer_type_casting(low_int: u8)-> u32{
+    let low_int: u32 = low_int.try_into().unwrap();
+    return low_int;
+}
 
+
+fn low_integer_type_casting(high_int: u32)-> u8{
+    let high_int: u8 = high_int.try_into().unwrap();
+    return high_int;
+}
+
+fn convert_string_to_str(my_string: &String) -> &str {
+    my_string.as_str()
+}
+
+fn convert_str_to_string(my_str: &str) -> String {
+    my_str.to_string()
+}
+
+fn arithmetic_signed_ops(first: i32, second: i32) -> (i32, i32, i32, i32) {
+    let addition: i32 = first + second;
+    let substraction: i32 = first - second;
+    let multiplication: i32 = first * second;
+    let division: i32 = first / second;
+    return (addition, substraction, multiplication, division);
+}
