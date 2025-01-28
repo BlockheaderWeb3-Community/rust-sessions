@@ -1,4 +1,7 @@
-use crate::{string_operations::{string_formating_names, convert_to_string_i1, convert_to_string_i2}, utils::{divide, float_sub, float_sum, is_even_num, mul, sub, sum }};
+use crate::{
+    string_operations::{convert_to_string_i1, convert_to_string_i2, string_formating_names},
+    utils::{divide, float_sub, float_sum, is_even_num, mul, sub, sum},
+};
 
 // Function to encapsulate operations on unsigned integers
 pub fn intro_to_u() {
@@ -15,19 +18,17 @@ pub fn intro_to_u() {
     println!("The division result is: {}", divide_result);
 
     let is_even_result: bool = is_even_num(10, 5); // Check if the sum of two numbers is even
-    println!("The result of is_even_num is: {}", is_even_result); 
+    println!("The result of is_even_num is: {}", is_even_result);
 
     let float_sum_result: f32 = float_sum(10.0, 5.0); // Calculate the sum of two floating-point numbers
-    println!("The float sum result is: {}", float_sum_result); 
+    println!("The float sum result is: {}", float_sum_result);
 
     let float_sub_result: f32 = float_sub(10.0, 4.0); // Calculate the difference of two floating-point numbers
     println!("The float subtraction result is: {}", float_sub_result);
 
     let combine_names_result = string_formating_names(
         &convert_to_string_i1("Oluwaseun"), // Convert first name to a string
-        &convert_to_string_i2("Jeremiah")  // Convert last name to a string
+        &convert_to_string_i2("Jeremiah"),  // Convert last name to a string
     );
     println!("Hello, my name is: {}", combine_names_result);
 }
-
-

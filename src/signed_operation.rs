@@ -14,10 +14,5 @@ pub fn intro_to_i() {
     println!("The signed division result is: {}", div_inum_results);
 
     let iseven_inum_results: bool = is_even_num(10, 4); // Check if the sum of two numbers is even
-    println!("The signed even result is: {}", iseven_inum_results); 
+    println!("The signed even result is: {}", iseven_inum_results);
 }
-
-
-
-
- 

@@ -1,4 +1,3 @@
-
 // Function to add two unsigned integers
 pub fn sum(x: u16, y: u16) -> u16 {
     x + y // Implicit return of the sum
