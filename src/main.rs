@@ -9,13 +9,15 @@ fn main() {
     intro_to_rust::check_func_results();
 }
 pub mod intro_to_rust {
-    use crate::arithmetic_ops::{
-        arithmetic_floatingpoint_ops, arithmetic_signed_ops, arithmetic_unsigned_ops,
-        integer_type_casting,
-    };
-    use crate::check_func::check_func;
-    use crate::string_ops::{
-        intro_to_str_slice, string_conversion_ops, string_formatting, string_handler,
+    use crate::{
+        arithmetic_ops::{
+            arithmetic_floatingpoint_ops, arithmetic_signed_ops, arithmetic_unsigned_ops,
+            integer_type_casting,
+        },
+        check_func::check_func,
+        string_ops::{
+            intro_to_str_slice, string_conversion_ops, string_formatting, string_handler,
+        },
     };
 
     pub fn intro_to_rust() {
