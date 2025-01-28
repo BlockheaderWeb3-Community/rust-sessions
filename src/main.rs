@@ -6,7 +6,7 @@ mod signed_integers;
 fn main() {
     intro_to_u();
     intro_to_f();
-    intro_to_char();
+    crate::char::intro_to_char();
     convert_high();
     convert_high_to_low();
     crate::signed_integers::perform_operations();
@@ -72,15 +72,7 @@ fn intro_to_f() {
     println!("the divide result is {}", split_result);
 }
 
-// function char
 
-fn intro_to_char() {
-    let name_result: String = char::name('D', 'o');
-    println!("The char result is: {}", name_result);
-
-    let myname_result: String = char::myname("Darey", "Olowo");
-    println!("my name are : {}", myname_result);
-}
 
 
 

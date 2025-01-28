@@ -12,3 +12,11 @@ pub fn name(x: char, y: char) -> String {
     myname.push_str(y);
     myname
 }
+
+pub fn intro_to_char() {
+    let name_result: String = name('D', 'o');
+    println!("The char result is: {}", name_result);
+
+    let myname_result: String = myname("Darey", "Olowo");
+    println!("my name are : {}", myname_result);
+}
