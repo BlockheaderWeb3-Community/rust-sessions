@@ -1,75 +1,52 @@
+pub mod arithmetic_ops;
+pub mod check_func;
+pub mod string_ops;
+
 fn main() {
-    intro_to_u();
-    string_handler();
+    intro_to_rust::intro_to_rust();
+    intro_to_rust::print_arithmetic_ops_results();
+    intro_to_rust::print_string_ops_results();
+    intro_to_rust::check_func_results();
 }
+pub mod intro_to_rust {
+    use crate::arithmetic_ops::{
+        arithmetic_floatingpoint_ops, arithmetic_signed_ops, arithmetic_unsigned_ops,
+        integer_type_casting,
+    };
+    use crate::check_func::check_func;
+    use crate::string_ops::{
+        intro_to_str_slice, string_conversion_ops, string_formatting, string_handler,
+    };
 
-fn intro_to_u() {
-    let full_name = string_formatting(
-        convert_to_string_v1("Akinshola"),
-        convert_to_string_v2("Akinniyi"),
-    );
-    let (addition, substraction, multiplication, division) =
-        arithmetic_signed_ops(2147483647, 2147483647);
-}
+    pub fn intro_to_rust() {
+        println!("Welcome to Rust Programming Language");
+    }
 
-fn string_formatting(first_name: String, last_name: String) -> String {
-    let full_name = format!("{} {}", first_name, last_name);
-    return full_name;
-}
+    pub fn print_arithmetic_ops_results() {
+        println!("The Sum, substraction, multiplication and division of the two numbers passed in this function are   {:?}", arithmetic_signed_ops(20, 3));
+        println!(
+            "This function types casts the first u32 to u8 amd the second u8 to u32 {:?} ",
+            integer_type_casting(20, 3)
+        );
+        println!("The Sum, substraction, multiplication and division of the two numbers passed in this function are    {:?}", arithmetic_unsigned_ops(20, 3));
+        println!("The Sum, substraction, multiplication and division of the two numbers passed in this function are    {:?}", arithmetic_floatingpoint_ops(2.0, 3.0));
+    }
 
-fn convert_to_string_v1(x: &str) -> String {
-    x.to_string()
-}
-
-fn convert_to_string_v2(x: &str) -> String {
-    String::from(x)
-}
-
-fn string_handler() {
-    intro_to_ownable_string();
-}
-
-fn intro_to_str_slice<'a>() -> &'a str {
-    let name: &str = "Sylvia";
-    name
-}
-
-fn intro_to_ownable_string() {
-    let mut name: String = String::from("Wisdom");
-    name.push_str(" John");
-}
-
-fn integer_type_casting(first_int: u32, second_int: u8) -> (u8, u32) {
-    (
-        first_int.try_into().unwrap(),
-        second_int.try_into().unwrap(),
-    )
-}
-
-fn string_conversion_ops<'a>(string_literal: &str, main_string: &'a String) -> (String, &'a str) {
-    (string_literal.to_string(), main_string.as_str())
-}
-
-fn arithmetic_signed_ops(first: i32, second: i32) -> (i32, i32, i32, i32) {
-    let addition: i32 = first + second;
-    let substraction: i32 = first - second;
-    let multiplication: i32 = first * second;
-    let division: i32 = first / second;
-    return (addition, substraction, multiplication, division);
-}
-
-fn arithmetic_unsigned_ops(first: u32, second: u32) -> (u32, u32, u32, u32) {
-    let addition: u32 = first + second;
-    let substraction: u32 = first - second;
-    let multiplication: u32 = first * second;
-    let division: u32 = first / second;
-    return (addition, substraction, multiplication, division);
-}
-
-fn arithmetic_floatingpoint_ops(first: f64, second: f64) -> (f64, f64, f64, f64) {
-    let addition = first + second;
-    let substraction = first - second;
-    let multiplication = first * second;
-    let divide = first / second;
-    (addition, substraction, multiplication, divide)
+    pub fn print_string_ops_results() {
+        let first_name = String::from("AKinshola");
+        let last_name = String::from("Akinniyi");
+        println!(
+            "The full name of the person is {}",
+            string_formatting(first_name, last_name)
+        );
+        println!(
+            "The string literal and the main string are {:?}",
+            string_conversion_ops("Hello", &String::from("World"))
+        );
+        println!("The string slice is {:?}", intro_to_str_slice());
+        string_handler();
+    }
+    pub fn check_func_results() {
+        println!(" {:?} ", check_func(8, 10));
+    }
 }
