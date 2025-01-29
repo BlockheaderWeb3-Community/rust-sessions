@@ -1,82 +1,98 @@
 
+//mod strings;
+mod float;
+mod signed;
+mod string;
+mod unsigned;
+fn main() {
+    unsigned::intro_to_u();
+    signed::intro_to_i();
+    float::intro_to_float();
+    string::strings();
+}
+
+
+
+
+
 
 
 
 
 /////////////////////////////////////////Assignment 1
 
-fn name_format(){
-    let full_name = string_formatting(&convert_to_string_v1("Ebube"), &convert_to_string_v2("Onuora"));
-    println!("Full Name: {}", full_name);
-}
+// fn name_format(){
+//     let full_name = string_formatting(&convert_to_string_v1("Ebube"), &convert_to_string_v2("Onuora"));
+//     println!("Full Name: {}", full_name);
+// }
 
-fn string_formatting(first_name: &str, last_name: &str) -> String {
-    let full_name = format!("{} {}", first_name, last_name);
-    return full_name;
-}
+// fn string_formatting(first_name: &str, last_name: &str) -> String {
+//     let full_name = format!("{} {}", first_name, last_name);
+//     return full_name;
+// }
 
-// util fn version 1 to convert &str to String 
-fn convert_to_string_v1(x: &str) -> String {
-    x.to_string()
-}
+// // util fn version 1 to convert &str to String 
+// fn convert_to_string_v1(x: &str) -> String {
+//     x.to_string()
+// }
 
-// util fn version 2 to convert &str to String 
-fn convert_to_string_v2(x: &str) -> String {
-    x.to_string()
-}
-
-
+// // util fn version 2 to convert &str to String 
+// fn convert_to_string_v2(x: &str) -> String {
+//     x.to_string()
+// }
 
 
 
 
-////////////////////////////////////////////////Assignment 2
-fn main (){
-    name_format();
-    convert_low_to_high();
-    convert_high_to_low();
-    perform_operations();
+
+
+// ////////////////////////////////////////////////Assignment 2
+// fn main (){
+//     name_format();
+//     convert_low_to_high();
+//     convert_high_to_low();
+//     perform_operations();
    
-}
+// }
 
 
-//Function to convert low integer to high integer u8 to u32
-fn convert_low_to_high(){
-    let low: u8 = 255; //A u8 value
-    let high: u32 = low as u32; //Covert u8 to u32
-    println!("u8 value: {}, u32 value:{}",low, high);
+// //Function to convert low integer to high integer u8 to u32
+// fn convert_low_to_high(){
+//     let low: u8 = 255; //A u8 value
+//     let high: u32 = low as u32; //Covert u8 to u32
+//     println!("u8 value: {}, u32 value:{}",low, high);
 
-}
+// }
 
 
-//Function to convert high bit integer to low bit integer u32 to u8
-    fn convert_high_to_low() {
-        let high: u32 = 300; // A u32 value
-        let low: u8 = high as u8; // Convert u32 to u8 with truncation
-        println!("u32 value: {}, u8 value: {}", high, low);
-    }
+// //Function to convert high bit integer to low bit integer u32 to u8
+//     fn convert_high_to_low() {
+//         let high: u32 = 300; // A u32 value
+//         let low: u8 = high as u8; // Convert u32 to u8 with truncation
+//         println!("u32 value: {}, u8 value: {}", high, low);
+//     }
 
-//Implement arithmetic operations on signed integers
+// //Implement arithmetic operations on signed integers
 
-fn perform_operations() {
-    let a: i32 = 25; // A signed 32-bit integer
-    let b: i32 = -10; // Another signed 32-bit integer
+// fn perform_operations() {
+//     let a: i32 = 25; // A signed 32-bit integer
+//     let b: i32 = -10; // Another signed 32-bit integer
 
-    // Arithmetic operations
-    let sum = a + b; // Addition
-    let difference = a - b; // Subtraction
-    let product = a * b; // Multiplication
-    let quotient = a / b; // Division
-    let remainder = a % b; // Modulus (remainder)
+//     // Arithmetic operations
+//     let sum = a + b; // Addition
+//     let difference = a - b; // Subtraction
+//     let product = a * b; // Multiplication
+//     let quotient = a / b; // Division
+//     let remainder = a % b; // Modulus (remainder)
 
-    println!("Arithmetic Operations on signed integers:");
-    println!("a = {}, b = {}", a, b);
-    println!("Sum: {}", sum);
-    println!("Difference: {}", difference);
-    println!("Product: {}", product);
-    println!("Quotient: {}", quotient);
-    println!("Remainder: {}", remainder);
-}
+//     println!("Arithmetic Operations on signed integers:");
+//     println!("a = {}, b = {}", a, b);
+//     println!("Sum: {}", sum);
+//     println!("Difference: {}", difference);
+//     println!("Product: {}", product);
+//     println!("Quotient: {}", quotient);
+//     println!("Remainder: {}", remainder);
+// }
 
 //Explain the difference between the fp32 and fp64 data types
 
