@@ -3,11 +3,22 @@ pub mod check_func;
 pub mod string_ops;
 pub mod calculator;
 
+mod float;
+mod signed;
+mod string;
+mod unsigned;
+
 fn main() {
     // intro_to_rust::intro_to_rust();
     // intro_to_rust::print_arithmetic_ops_results();
     // intro_to_rust::print_string_ops_results();
     // intro_to_rust::check_func_results();
+  
+//       unsigned::intro_to_u();
+//     signed::intro_to_i();
+//     float::intro_to_float();
+//     string::strings();
+  
     calculator::main();
 }
 pub mod intro_to_rust {
