@@ -1,12 +1,14 @@
 pub mod arithmetic_ops;
 pub mod check_func;
 pub mod string_ops;
+pub mod calculator;
 
 fn main() {
-    intro_to_rust::intro_to_rust();
-    intro_to_rust::print_arithmetic_ops_results();
-    intro_to_rust::print_string_ops_results();
-    intro_to_rust::check_func_results();
+    // intro_to_rust::intro_to_rust();
+    // intro_to_rust::print_arithmetic_ops_results();
+    // intro_to_rust::print_string_ops_results();
+    // intro_to_rust::check_func_results();
+    calculator::main();
 }
 pub mod intro_to_rust {
     use crate::{
