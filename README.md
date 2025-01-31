@@ -73,3 +73,77 @@ difference between &str and string
 &str: This is a string slice, which is an immutable reference to a portion of a string. It does not own the data it references; instead, it borrows the data from another source, such as a String or a string literal. &str is lightweight and useful when you only need to view a part of a string without owning it. It is commonly used for function parameters when you do not need to modify the string.
 
 String: This is a growable, heap-allocated, UTF-8 encoded string. It owns its data and can be modified and resized at runtime. You can create a new String by calling String::new() or by converting from a string slice using to_string(). String is mutable and can be used in scenarios where you need to build or modify strings dyn
+
+
+
+
+
+
+
+
+A CPU, or Central Processing Unit, is the primary component in a computer that executes instructions and processes data from computer programs. It acts as the “brain” of the computer, handling tasks such as arithmetic, logic, and input/output operations. The CPU coordinates other components in the system and is essential for the computer’s overall functionality.
+
+RAM (Random Access Memory)
+
+Temporary, fast memory that stores:
+
+Currently running programs,Active data being processed,Operating system components
+
+
+Characteristics:
+
+Volatile (loses data when power is off)
+Much faster than storage drives
+Directly accessible by CPU
+Measured in GB (8GB, 16GB, etc.)
+
+
+
+ROM (Read-Only Memory)
+
+Permanent memory that contains:
+
+BIOS/UEFI (Basic Input/Output System)
+Firmware
+Boot instructions
+
+
+Characteristics:
+
+Non-volatile (keeps data when power is off)
+Can't be easily modified
+Slower than RAM
+Usually small capacity
+
+
+
+How They Work Together:
+
+ROM stores startup instructions
+When computer starts, CPU reads ROM instructions
+Operating system loads into RAM
+CPU processes instructions, using RAM as working memory
+Data flows between components via system bus
+
+
+A stack is a part of memory that has a specific data structure.
+
+When there is a new piece of data that should be stored, the stack will always put it “on top”. (push to the stack)
+When a piece of data should be removed from the stack, it is also taken “from the top”. (pop off the stack)
+using the   last in, first out (LIFO) data structure.
+All entries that are pushed to the stack are required to have a known, fixed size. The size should be known at compile time, and can not change during runtime. We can not put things of variable size in the stack (like a string that might grow in size).
+
+
+                heap 
+
+Heap memory in Rust is a part of the memory system used for dynamic memory allocation. Unlike stack memory, which is managed automatically by the compiler and has a fixed layout, heap memory is managed manually and is not bound to function scopes. This means that variables allocated on the heap can live longer than the function that created them, allowing for more flexible memory managem
+
+
+A pointer is a general concept for a variable that contains an address in memory. This address refers to, or “points at,” some other data.
+
+
+anything not implemented by a vetor dont have  capacity 
+
+
+
+

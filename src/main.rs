@@ -2,15 +2,39 @@ mod u8operation;
 mod f64operation;
 mod char;
 mod signed_integers;
+mod calculator;
 
 fn main() {
-    intro_to_u();
-    intro_to_f();
-    crate::char::intro_to_char();
-    convert_high();
-    convert_high_to_low();
-    crate::signed_integers::perform_operations();
+    // intro_to_u();
+    // intro_to_f();
+    // crate::char::intro_to_char();
+    // convert_high();
+    // convert_high_to_low();
+    // crate::signed_integers::perform_operations();
+    crate::calculator::cal();
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function to encapsulate all integers and to check for even numbers
 fn intro_to_u() {
