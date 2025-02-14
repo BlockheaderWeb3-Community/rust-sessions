@@ -1,8 +1,68 @@
-fn main() {
-    // intro_to_u();
-    string_handler();
+#[derive(Debug)]
+struct User{
+    id:u64,
+    name:String,
+    gender:Sex,
+    marital_status:Status,
 }
 
+#[derive(Debug)]
+enum Status {
+    Married,
+    Single,
+    Divorce,
+    Widow
+}
+
+#[derive(Debug)]
+enum Sex{
+    Male,
+    Female
+}
+
+impl User {
+    fn new_user(id:u64,name:String,gender:Sex,marital_status:Status) -> User{
+        User {
+            id,
+            name,
+            gender,
+            marital_status,
+        }
+    }
+ 
+    fn update_user_name(&mut self, name:String){
+        self.name = name;
+    }
+    fn update_user_sex(&mut self, gender: Sex){
+        self.gender=gender;
+    }
+    fn update_user_marital_status(&mut self, status:Status){
+        self.marital_status=status;
+    }
+}
+
+fn main() {
+    // intro_to_u();
+    //string_handler();
+    let mut user_one = User::new_user(5, "yunus".to_string(), Sex::Male, Status::Single);
+    let mut user_two = User::new_user(4, "Titilola".to_string(), Sex::Female, Status::Divorce);
+    let mut user_three = User::new_user(3, "yunus".to_string(), Sex::Male, Status::Married);
+    let mut user_four = User::new_user(2, "funke".to_string(), Sex::Female, Status::Widow);
+    let mut user_data = [&mut user_one,&mut user_two,&mut user_three,&mut user_four];
+
+    User::update_user_name(&mut  user_data[0], "Iliya".to_string());
+    User::update_user_marital_status(&mut  user_data[1], Status::Married);
+    User::update_user_sex(&mut  user_data[2], Sex::Female);
+    User::update_user_name(&mut  user_data[2], "kemi".to_string());
+ 
+
+    //User::update_user_name(&mut user_one, "Abdul".to_string());
+
+
+    println!("user {:#?}", user_data);
+}
+
+#[allow(dead_code)]
 // function to encapsulate all integers
 fn intro_to_u(){
     let sum_result: u8 = sum(5, 10);
@@ -89,20 +149,19 @@ fn convert_to_string_v2(x: &str) -> String {
    String::from(x)
 }
 
-=======
-// function that encapsulate all integers
-fn intro_to_u() {
-    // subtract
-    // multiplication
-    // division
-    let sum_result: u8 = sum(5, 10);
-    println!("the sum result is: {}", sum_result);
-}
+// // function that encapsulate all integers
+// fn intro_to_u() {
+//     // subtract
+//     // multiplication
+//     // division
+//     let sum_result: u8 = sum(5, 10);
+//     println!("the sum result is: {}", sum_result);
+// }
 
-fn sum(x: u8, y: u8) -> u8 {
-    x + y // implicit return
-    //    return x + y; // explicit return
-}
+// fn sum(x: u8, y: u8) -> u8 {
+//     x + y // implicit return
+//     //    return x + y; // explicit return
+// }
 
 // handle all string-related functions
 fn string_handler() {
