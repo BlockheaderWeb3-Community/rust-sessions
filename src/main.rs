@@ -10,10 +10,14 @@
 //     string::strings();
 // }
 
+mod types;
+use crate::types::*;
 fn main() {
     let mut myusers: Vec<User> = Vec::new();
+
+    // create new user
     User::new(
-        String::from("Alice"),
+        String::from("John"),
         25,
         MaritalStatus::Single,
         1,
@@ -21,12 +25,9 @@ fn main() {
         &mut myusers,
     );
 
-    if let Some(user) = myusers.get_mut(0) {
-        user.updateuser_marital_status(MaritalStatus::Married);
-    }
-
+    // create user 2
     User::new(
-        String::from("Bob"),
+        String::from("Akin"),
         30,
         MaritalStatus::Married,
         2,
@@ -34,11 +35,21 @@ fn main() {
         &mut myusers,
     );
 
+    // update first user marital status
+    if let Some(user) = myusers.get_mut(0) {
+        user.updateuser_marital_status(MaritalStatus::Married);
+    }
+
+    // update second user sex
     if let Some(user) = myusers.get_mut(1) {
         user.updateuser_sex(Sex::Female);
     }
-    println!("{:#?}", myusers);
 
+    // prints user vec
+    println!("This is the whole user vec data {:#?}", myusers);
+
+    // printing all data from user 1
+    print!("--- Printing the data from the user Vec ---");
     if let Some(user) = myusers.get(0) {
         println!(
             "User 1's marital status: {} \n Name and id of the user is: {} and {} while his age is {}",
@@ -46,71 +57,14 @@ fn main() {
         );
     }
 
+    // printing all data from user 1
     if let Some(user) = myusers.get(1) {
-        println!("User 2's sex: {}", user.sex.to_string());
-    }
-
-    #[derive(Debug)]
-    struct User {
-        name: String,
-        age: u32,
-        marital_status: MaritalStatus,
-        id: u32,
-        sex: Sex,
-    }
-
-    #[derive(Debug)]
-    enum MaritalStatus {
-        Single,
-        Married,
-    }
-    impl MaritalStatus {
-        fn to_string(&self) -> &'static str {
-            match self {
-                MaritalStatus::Single => "Single",
-                MaritalStatus::Married => "Married",
-            }
-        }
-    }
-
-    #[derive(Debug)]
-    enum Sex {
-        Male,
-        Female,
-    }
-
-    impl Sex {
-        fn to_string(&self) -> &'static str {
-            match self {
-                Sex::Male => "Male",
-                Sex::Female => "Female",
-            }
-        }
-    }
-
-    impl User {
-        fn new(
-            name: String,
-            age: u32,
-            marital_status: MaritalStatus,
-            id: u32,
-            sex: Sex,
-            users: &mut Vec<User>,
-        ) {
-            let new_user = User {
-                name,
-                age,
-                marital_status,
-                id,
-                sex,
-            };
-            users.push(new_user);
-        }
-        fn updateuser_marital_status(&mut self, marital_status: MaritalStatus) {
-            self.marital_status = marital_status;
-        }
-        fn updateuser_sex(&mut self, sex: Sex) {
-            self.sex = sex;
-        }
+        println!(
+            "User 2's sex: {} \n Name and id of the user is: {} and {} while his age is {}",
+            user.sex.to_string(),
+            user.name,
+            user.id,
+            user.age
+        );
     }
 }
