@@ -30,36 +30,40 @@ impl User {
         }
     }
  
-    fn update_user_name(&mut self, name:String){
-        self.name = name;
+    fn update_user_name(name:String, users_data: &mut Vec<User>, id:u64){
+        let updated_name = users_data.iter_mut().find(|x| x.id == id ).unwrap();
+        updated_name.name = name;
     }
-    fn update_user_sex(&mut self, gender: Sex){
-        self.gender=gender;
+    fn update_user_sex(gender: Sex,users_data: &mut Vec<User>, id:u64){
+        let updated_sex = users_data.iter_mut().find(|x| x.id == id ).unwrap();
+        updated_sex.gender=gender;
     }
-    fn update_user_marital_status(&mut self, status:Status){
-        self.marital_status=status;
+    fn update_user_marital_status(status:Status,users_data: &mut Vec<User>, id:u64){
+        let updated_status = users_data.iter_mut().find(|x| x.id == id ).unwrap();
+        updated_status.marital_status=status;
     }
 }
 
 fn main() {
     // intro_to_u();
     //string_handler();
-    let mut user_one = User::new_user(5, "yunus".to_string(), Sex::Male, Status::Single);
-    let mut user_two = User::new_user(4, "Titilola".to_string(), Sex::Female, Status::Divorce);
-    let mut user_three = User::new_user(3, "yunus".to_string(), Sex::Male, Status::Married);
-    let mut user_four = User::new_user(2, "funke".to_string(), Sex::Female, Status::Widow);
-    let mut user_data = [&mut user_one,&mut user_two,&mut user_three,&mut user_four];
+    let mut users_data :Vec<User>=  Vec::new();
+    users_data.push(User::new_user(5, "yunus".to_string(), Sex::Male, Status::Single));
+    users_data.push(User::new_user(4, "Titilola".to_string(), Sex::Female, Status::Divorce));
+    users_data.push(User::new_user(3, "yunus".to_string(), Sex::Male, Status::Married));
+    users_data.push(User::new_user(2, "funke".to_string(), Sex::Female, Status::Widow));
 
-    User::update_user_name(&mut  user_data[0], "Iliya".to_string());
-    User::update_user_marital_status(&mut  user_data[1], Status::Married);
-    User::update_user_sex(&mut  user_data[2], Sex::Female);
-    User::update_user_name(&mut  user_data[2], "kemi".to_string());
+    User::update_user_name("Iliya".to_string(),&mut users_data,5);
+    User::update_user_marital_status(Status::Married,&mut users_data,4);
+    User::update_user_sex(Sex::Female,&mut users_data,3);
+    User::update_user_name("kemi".to_string(),&mut users_data,2);
  
 
     //User::update_user_name(&mut user_one, "Abdul".to_string());
 
+    //let q = users_data.iter().find(|&x| x.id == 5 );
 
-    println!("user {:#?}", user_data);
+    println!("user {:#?}", users_data);
 }
 
 #[allow(dead_code)]
