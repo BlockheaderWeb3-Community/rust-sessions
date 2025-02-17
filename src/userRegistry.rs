@@ -1,4 +1,4 @@
-fn user_registry() {
+pub fn user_registry() {
     // intro_to_u();
 
     
@@ -70,9 +70,9 @@ impl User {
        update_user
     }
 
-    // fn update_name(&mut self, _name: String) {
-    //    self.name = _name
-    //  }
+    fn update_name_(&mut self, _name: String) {
+       self.name = _name
+     }
 
     fn update_name(&self, _name: String) -> User { 
         let update_user = User {
