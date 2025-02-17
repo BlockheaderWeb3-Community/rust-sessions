@@ -45,8 +45,6 @@ impl User {
 }
 
 fn main() {
-    // intro_to_u();
-    //string_handler();
     let mut users_data :Vec<User>=  Vec::new();
     users_data.push(User::new_user(5, "yunus".to_string(), Sex::Male, Status::Single));
     users_data.push(User::new_user(4, "Titilola".to_string(), Sex::Female, Status::Divorce));
@@ -57,11 +55,5 @@ fn main() {
     User::update_user_marital_status(Status::Married,&mut users_data,4);
     User::update_user_sex(Sex::Female,&mut users_data,3);
     User::update_user_name("kemi".to_string(),&mut users_data,2);
- 
-
-    //User::update_user_name(&mut user_one, "Abdul".to_string());
-
-    //let q = users_data.iter().find(|&x| x.id == 5 );
-
     println!("user {:#?}", users_data);
 }
