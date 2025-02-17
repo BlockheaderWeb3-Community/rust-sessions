@@ -3,4 +3,10 @@ name = "rust_sessions"
 version = "0.1.0"
 edition = "2021"
 
-[dependencies]
+[dependencies.uuid]
+version = "1.13.1"
+features = [
+    "v4",              
+    "fast-rng",     
+    "macro-diagnostics",
+]
