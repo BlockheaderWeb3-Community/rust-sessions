@@ -12,6 +12,7 @@ fn main() {
         &mut myusers,
     );
 
+    
     // create user 2
     User::new(
         String::from("Akin"),

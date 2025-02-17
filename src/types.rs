@@ -1,10 +1,11 @@
-// yser struct and implementation
+use uuid::Uuid;
+// user struct and implementation
 #[derive(Debug)]
 pub struct User {
     pub name: String,
     pub age: u32,
     pub marital_status: MaritalStatus,
-    pub id: u32,
+    pub id: Uuid,
     pub sex: Sex,
 }
 
@@ -16,12 +17,12 @@ impl User {
         sex: Sex,
         users: &mut Vec<User>,
     ) {
-        let id = users.len() as u32;
+
         let new_user = User {
             name,
             age,
             marital_status,
-            id: id + 1,
+            id:  Uuid::new_v4(),
             sex,
         };
         users.push(new_user);
