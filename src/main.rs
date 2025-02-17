@@ -46,10 +46,10 @@ fn main() {
     }
 
     // prints user vec
-    println!("This is the whole user vec data {:#?}", myusers);
+    println!("This is the whole user vec data \n {:#?}", myusers);
 
     // printing all data from user 1
-    print!("--- Printing the data from the user Vec ---");
+    print!("--- Printing the data from the user Vec --- \n");
     if let Some(user) = myusers.get(0) {
         println!(
             "User 1's marital status: {} \n Name and id of the user is: {} and {} while his age is {}",
