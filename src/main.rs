@@ -1,15 +1,3 @@
-// //mod strings;
-// mod float;
-// mod signed;
-// mod string;
-// mod unsigned;
-// fn main() {
-//     unsigned::intro_to_u();
-//     signed::intro_to_i();
-//     float::intro_to_float();
-//     string::strings();
-// }
-
 mod types;
 use crate::types::*;
 fn main() {
@@ -65,4 +53,13 @@ fn main() {
             user.age
         );
     }
+
+    // using the function to find user
+    println!("---find user that returns the user---");
+    println!("the user found is \n {:#?}", find_user(0, &mut myusers))
+}
+
+pub fn find_user(id: u32, users: &mut Vec<User>) -> Option<&User> {
+    let user = users.get(id as usize);
+    user
 }
