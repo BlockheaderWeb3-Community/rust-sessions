@@ -93,21 +93,7 @@ pub enum Sex {
     
 pub fn user_reg() {
     
-    // let all_users = [
-
-    //     User {id: 0, name: "David".to_string(), age: 20, status: MarriedStatus::Single, gender: Sex::Male},
-    //     User {id: 1, name: "Oshioke".to_string(), age: 40, status: MarriedStatus::Divorced, gender: Sex::Female},
-    //     User {id: 2, name: "Ibukun".to_string(), age: 24, status: MarriedStatus::Married, gender: Sex::Female},
-    //     User {id: 3, name: "Andrew".to_string(), age: 26, status: MarriedStatus::Divorced, gender: Sex::Male},
-    //     User {id: 4, name: "Emmanuel".to_string(), age: 34, status: MarriedStatus::Single, gender: Sex::Male},
-    // ];
-
-    // match all_users {
-    //     [User { id: 0, name, .. }, ..] => println!("First user is {}", name),
-    //     [_, User { id: 1, name, .. }, ..] => println!("Second user is {}", name),
-    //     _ => println!("User is not Registered"),
-    // }
-
+    
     let mut all_users = vec![
         User {id: 0, name: "David".to_string(), age: 20, status: MarriedStatus::Single, gender: Sex::Male},
         User {id: 1, name: "Oshioke".to_string(), age: 40, status: MarriedStatus::Divorced, gender: Sex::Female},
