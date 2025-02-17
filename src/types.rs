@@ -13,15 +13,15 @@ impl User {
         name: String,
         age: u32,
         marital_status: MaritalStatus,
-        id: u32,
         sex: Sex,
         users: &mut Vec<User>,
     ) {
+        let id = users.len() as u32;
         let new_user = User {
             name,
             age,
             marital_status,
-            id,
+            id: id + 1,
             sex,
         };
         users.push(new_user);

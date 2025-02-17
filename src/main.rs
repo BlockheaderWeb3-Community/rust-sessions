@@ -20,7 +20,6 @@ fn main() {
         String::from("John"),
         25,
         MaritalStatus::Single,
-        1,
         Sex::Female,
         &mut myusers,
     );
@@ -30,7 +29,6 @@ fn main() {
         String::from("Akin"),
         30,
         MaritalStatus::Married,
-        2,
         Sex::Male,
         &mut myusers,
     );
