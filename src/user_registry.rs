@@ -1,6 +1,8 @@
+use uuid::Uuid;
+
 #[derive(Clone, Debug)]
 pub struct User {
-    id: i8,
+    id: uuid;
     name: String,
     age: i16,
     status: MarriedStatus,
@@ -23,7 +25,7 @@ pub enum Sex {
     impl User {
         pub fn users(_id: i8, _name: String , _age:i16, _status: MarriedStatus, _gender: Sex) -> User {
             let user = User {
-                id: _id,
+                id: Uuid::new_v4();
                 name: _name,
                 age: _age,
                 status: _status,
@@ -82,6 +84,11 @@ pub enum Sex {
         pub fn update_user_name(&mut self, _name: String) {
                 self.name = _name.to_string(); 
             }
+
+            fn check_if_id_exist (user:&[User], _id: i8) -> bool {
+                all_users.iter().any(|user| user.id == user_id)
+
+            }
          
  
     }
@@ -108,7 +115,7 @@ pub fn user_reg() {
 
     
 
-    let mut new_user = User::users( 0,"David".to_string(),  28,  MarriedStatus::Married, Sex::Male);
+    let mut new_user = User::users( "David".to_string(),  28,  MarriedStatus::Married, Sex::Male);
     println!("The user here: {:?} ", new_user);
 
 
