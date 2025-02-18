@@ -21,7 +21,7 @@ fn new(title: String, author: String, year: u32) -> Book {
 }
 
 fn main() {
-pub let new_book = Book {
+let new_book = Book {
     title:"The Hidden Ember Ignited the Sky"to_string(),
     author:"Jemiiah".to_string ,
     year: 2027,
