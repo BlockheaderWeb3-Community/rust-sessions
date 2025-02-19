@@ -1,4 +1,5 @@
 //mod strings;
+mod book;
 mod float;
 mod signed;
 mod string;
@@ -11,4 +12,5 @@ fn main() {
     float::intro_to_float();
     string::strings();
     user_struct::user_registry();
+    book::book_registry();
 }
