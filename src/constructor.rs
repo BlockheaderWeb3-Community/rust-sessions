@@ -1,3 +1,4 @@
+#[derive(Debug)]
 pub struct Book<'a> {
     pub title: &'a str,
     pub author: &'a str, 
@@ -26,4 +27,5 @@ let new_book = Book::new (
     "Jemiiah",
     2027,
 );
+println!("the new_book overview is {:?}", new_book);
 }
