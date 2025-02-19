@@ -2,7 +2,7 @@ use uuid::Uuid;
 
 #[derive(Clone, Debug)]
 pub struct User {
-    id: uuid;
+    id: u32,
     name: String,
     age: i16,
     status: MarriedStatus,
@@ -25,7 +25,7 @@ pub enum Sex {
     impl User {
         pub fn users(_id: i8, _name: String , _age:i16, _status: MarriedStatus, _gender: Sex) -> User {
             let user = User {
-                id: Uuid::new_v4();
+                id: u32,
                 name: _name,
                 age: _age,
                 status: _status,
@@ -128,4 +128,4 @@ pub fn user_reg() {
     let update_name = User::update_user_name(&mut new_user, "Caleb".to_string());
     println!("The updated username is: {:?}", update_name); 
 
-    }
+    }we
