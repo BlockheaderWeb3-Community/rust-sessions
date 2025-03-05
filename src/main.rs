@@ -6,6 +6,7 @@ mod string;
 mod unsigned;
 mod user_struct;
 mod todo;
+mod collections;
 
 fn create_todo(mut todos: Vec<todo::Todo>) -> Vec<todo::Todo>{
     let tid = todos.len(); 
@@ -22,6 +23,7 @@ fn main() {
     float::intro_to_float();
     string::strings();
     user_struct::user_registry();
+    collections::collections();
 
     //Book creation
     let book = constructor::Book::new("The Rust Programming Language", "Steve Klabnik", 2019);
