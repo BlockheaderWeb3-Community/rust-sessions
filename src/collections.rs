@@ -2,6 +2,30 @@
 // Haystack of numbers, search for 47
 // Haystack of strings, search for Agent.
 
+fn search_needle<T: PartialEq>(haystack: Vec<T>, needle: T) -> Option<usize> {
+    haystack.iter().position(|&item| item == needle)
+}
+
+fn main() {
+    // Haystack of numbers, search for 47
+    let numbers: Vec<i32> = vec![10, 25, 47, 30, 15];
+    match search_needle(numbers.clone(), 47) {
+        Some(index) => println!("Found 47 at index {}", index),
+        None => println!("47 not found in the numbers"),
+    }
+
+    // Haystack of strings, search for "Agent"
+    let strings: Vec<String> = vec![
+        "Smith".to_string(),
+        "Agent".to_string(),
+        "Neo".to_string(),
+    ];
+    match search_needle(strings.clone(), "Agent".to_string()) {
+        Some(index) => println!("Found 'Agent' at index {}", index),
+        None => println!("'Agent' not found in the strings"),
+    }
+}
+
 // Given a string of characters
 // Convert it to an array of characters
 // Print all the characters
