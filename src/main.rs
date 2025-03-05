@@ -1,16 +1,22 @@
 //mod strings;
+mod collections;
 mod constructor;
 mod float;
 mod signed;
 mod string;
+mod todo;
 mod unsigned;
 mod user_struct;
-mod todo;
-mod collections;
 
-fn create_todo(mut todos: Vec<todo::Todo>) -> Vec<todo::Todo>{
-    let tid = todos.len(); 
-    todos.push(todo::Todo::new(tid.clone() as u32, "New Day".to_string(), todo::Status::Pending, "22:02:25".to_string(), "Lorem Ipsom".to_string()));
+fn create_todo(mut todos: Vec<todo::Todo>) -> Vec<todo::Todo> {
+    let tid = todos.len();
+    todos.push(todo::Todo::new(
+        tid.clone() as u32,
+        "New Day".to_string(),
+        todo::Status::Pending,
+        "22:02:25".to_string(),
+        "Lorem Ipsom".to_string(),
+    ));
 
     print!("todo {:#?}", todos[tid]);
 
@@ -38,7 +44,4 @@ fn main() {
     todo_task = create_todo(todo_task);
     todo_task = create_todo(todo_task);
     todo_task = create_todo(todo_task);
-
-
-
 }
