@@ -6,6 +6,7 @@ mod routes;
 
 use routes::{
     handle_create_name::create_name, handle_formatted_name::formatted_name, handle_name::say_name,
+    handle_weather_request::get_weather,
 };
 const BASE_URL: &str = "0.0.0.0:5000"; // base url for server
 
@@ -22,5 +23,6 @@ pub fn server() -> Router {
         .route("/", get(|| async { "Hello, World!" }))
         .route("/say-name", get(|| say_name()))
         .route("/json-name", get(|| formatted_name()))
-        .route("/create-name", post(create_name));
+        .route("/create-name", post(create_name))
+        .route("/weather", get(get_weather));
 }
