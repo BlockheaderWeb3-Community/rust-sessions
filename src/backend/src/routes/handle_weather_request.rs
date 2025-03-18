@@ -24,7 +24,7 @@ pub async fn get_weather() -> impl IntoResponse {
     let api = String::from(
         "https://api.weatherapi.com/v1/current.json?key=bb2e5608bc574becad611405240207&q=",
     );
-    match response_data(api, "omoigbh").await {
+    match response_data(api, "london").await {
         Ok(data) => {
             let weather = format_data(data);
             (StatusCode::OK, Json(weather))
@@ -59,7 +59,7 @@ async fn response_data(api: String, city: &str) -> Result<Json<Value>, Box<dyn s
     let url = format!("{}{}", api, city);
     let data = reqwest::get(&url).await?;
 
-    if data.status() != 200 {
+    if data.status() != 200 { 
         return Err("city detail not found".into());
     }
     let response: Value = data.json().await?;
