@@ -59,7 +59,7 @@ async fn response_data(api: String, city: &str) -> Result<Json<Value>, Box<dyn s
     let url = format!("{}{}", api, city);
     let data = reqwest::get(&url).await?;
 
-    if data.status() != 200 { 
+    if data.status() != 200 {
         return Err("city detail not found".into());
     }
     let response: Value = data.json().await?;
