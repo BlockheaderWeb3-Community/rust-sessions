@@ -1,0 +1,14 @@
+pub mod drop_trait;
+pub mod eight_size_trait;
+pub mod eleven_clone_trait;
+pub mod five_trait_bound;
+pub mod four_derive_trait;
+pub mod nine_from_trait;
+pub mod one_trait;
+pub mod outro_trait;
+pub mod seven_deref_trait;
+pub mod six_str_slice_trait;
+pub mod ten_assos_vs_generic;
+pub mod three_operator_trait;
+pub mod twelve_copy_trait;
+pub mod two_trait;

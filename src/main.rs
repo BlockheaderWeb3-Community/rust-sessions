@@ -5,6 +5,7 @@ mod float;
 mod signed;
 mod string;
 mod todo;
+mod traits;
 mod unsigned;
 mod user_struct;
 
