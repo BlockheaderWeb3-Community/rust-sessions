@@ -7,6 +7,7 @@ mod string;
 mod todo;
 mod unsigned;
 mod user_struct;
+mod cache;
 
 fn create_todo(mut todos: Vec<todo::Todo>) -> Vec<todo::Todo> {
     let tid = todos.len();
