@@ -1,4 +1,3 @@
-use std::fmt::Error;
 use std::hash::Hash;
 use std::{collections::HashMap, str};
 
@@ -24,7 +23,7 @@ impl<K: Eq + Hash + Copy, V> Data<K, V> {
     // this add function returns a result enum
     // this function adds to the data struct passed in and returns `Ok(())`
     fn add(&mut self, key: K, value: V) -> Result<(), _> {
-        &self.cache.insert(key, value);
+        self.cache.insert(key, value);
         Ok(())
     }
 
@@ -41,14 +40,12 @@ impl<K: Eq + Hash + Copy, V> Data<K, V> {
     }
 
     fn update(&mut self, key: K, value: V) -> Result<(), &str> {
-        let current_value = &self.get(key);
-        match current_value {
-            Some(_) => {
-                &self.cache.insert(key, value);
-                println!("successfully updated");
-                Ok(())
-            }
-            None => Err("key you passed doesnt exist"),
+        if self.cache.contains_key(&key) {
+            self.cache.insert(key, value);
+            println!("successfully updated");
+            Ok(())
+        } else {
+            Err("key you passed doesnt exist")
         }
     }
 }
