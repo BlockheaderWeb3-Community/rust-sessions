@@ -22,9 +22,8 @@ impl<K: Eq + Hash + Copy, V> Data<K, V> {
 
     // this add function returns a result enum
     // this function adds to the data struct passed in and returns `Ok(())`
-    fn add(&mut self, key: K, value: V) -> Result<(), _> {
+    fn add(&mut self, key: K, value: V) {
         self.cache.insert(key, value);
-        Ok(())
     }
 
     fn get(&self, key: K) -> Option<&V> {
