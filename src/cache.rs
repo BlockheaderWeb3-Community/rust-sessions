@@ -1,53 +1,59 @@
 use std::fmt::Error;
-use std::{collections::HashMap, str};
 use std::hash::Hash;
+use std::{collections::HashMap, str};
 
-struct Data<K, V>(HashMap<K, V>);
+// This is a struct `Data` with generic types K & V
+// this struct stores a cache field which has a hash map of
+// Key of generic type K and value of generic type V
+struct Data<K, V> {
+    cache: HashMap<K, V>,
+}
 
+// implementation for the struct Data, this is taking a generic type of K & V
+// K is bound by the eq, hash and copy triats ie: K type must:
+// implement the copy trait, the eq trait and the hash trait
 impl<K: Eq + Hash + Copy, V> Data<K, V> {
-    
-    fn new() -> HashMap<K, V> {
-        // , key: i32, value: &str
-        let local_cache: HashMap<K, V> = HashMap::new();
-        local_cache
+    // new function impl of the data struct
+    // this function returns self: ie a Data struct newly created
+    fn new() -> Self {
+        Data {
+            cache: HashMap::new(),
+        }
     }
 
-    fn add(&mut self, key: K, value: V) {
-        let _current_key = &self.0.entry(key).or_insert(value);
+    // this add function returns a result enum
+    // this function adds to the data struct passed in and returns `Ok(())`
+    fn add(&mut self, key: K, value: V) -> Result<(), _> {
+        &self.cache.insert(key, value);
+        Ok(())
     }
-    // String::from("john")
-    // get
+
     fn get(&self, key: K) -> Option<&V> {
-        self.0.get(&key)
+        self.cache.get(&key)
     }
 
     fn delete(&mut self, key: K) -> Result<V, &str> {
-        // type Output = &str;
-        let deleted_data = self.0.remove(&key);
+        let deleted_data = self.cache.remove(&key);
         match deleted_data {
-            Some(a) => {
-               Ok(a)
-            }
+            Some(a) => Ok(a),
             None => return Err("Data not found"),
         }
     }
 
-    fn update(&mut self, key: K, value: V){
+    fn update(&mut self, key: K, value: V) -> Result<(), &str> {
         let current_value = &self.get(key);
         match current_value {
-            Some(_) => { let _ = &self.0.insert(key, value);
-            println!("successfully updated") },
-            None => println!("key you passed doesnt exist")
+            Some(_) => {
+                &self.cache.insert(key, value);
+                println!("successfully updated");
+                Ok(())
+            }
+            None => Err("key you passed doesnt exist"),
         }
-
     }
 }
 
-fn main() {
-    let global_hashmap: HashMap<i32, &str> = Data::new();
-}
+fn main() {}
 
 #[cfg(test)]
-mod test {
-    
-}
+mod test {}
