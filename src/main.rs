@@ -1,4 +1,5 @@
 //mod strings;
+mod calculator;
 mod collections;
 mod constructor;
 mod float;
@@ -44,4 +45,20 @@ fn main() {
     todo_task = create_todo(todo_task);
     todo_task = create_todo(todo_task);
     todo_task = create_todo(todo_task);
+
+    let a: f64 = 20.00;
+    let b: f64 = 12.00;
+    println!(
+        "The summation of {} and {} is {}",
+        a,
+        b,
+        calculator::add(a, b)
+    );
+
+    println!(
+        "The difference between {} and {} is {}",
+        a,
+        b,
+        calculator::subtract(a, b)
+    );
 }
