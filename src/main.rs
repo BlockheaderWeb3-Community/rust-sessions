@@ -1,4 +1,5 @@
 //mod strings;
+mod cache;
 mod calculator;
 mod collections;
 mod constructor;
