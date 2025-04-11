@@ -2,6 +2,9 @@ use rust_sessions::cache::Data;
 use std::io;
 use std::io::Write;
 
+//mod strings;
+mod cache;
+mod calculator;
 mod collections;
 mod constructor;
 mod float;
@@ -132,4 +135,19 @@ fn main() {
             _ => println!("Invalid choice."),
         }
     }
+    let a: f64 = 20.00;
+    let b: f64 = 12.00;
+    println!(
+        "The summation of {} and {} is {}",
+        a,
+        b,
+        calculator::add(a, b)
+    );
+
+    println!(
+        "The difference between {} and {} is {}",
+        a,
+        b,
+        calculator::subtract(a, b)
+    );
 }
