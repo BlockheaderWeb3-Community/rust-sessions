@@ -6,6 +6,7 @@ mod constructor;
 mod float;
 mod signed;
 mod string;
+mod student_reg;
 mod todo;
 mod unsigned;
 mod user_struct;
