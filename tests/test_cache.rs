@@ -4,7 +4,6 @@ use rust_sessions::cache::Data;
 
 fn test_new_cache() {
     let new_cache: Data<i32, &str> = Data::new();
-
     assert_eq!(new_cache.cache.len(), 0);
 }
 
