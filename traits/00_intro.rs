@@ -1,5 +1,5 @@
 fn intro() -> &'static str {
-    // TODO: fix me 👇
+    // TODO: fix me 👇 here
     "I'm ready to learn about traits!"
 }
 
