@@ -3,21 +3,22 @@ pub struct User {
     name: String,
     age: u32,
     user_id: u16,
-    is_active: bool
+    is_active: bool,
 }
 
-#[allow(dead_code)]
 pub fn user_details() {
-    let user = User {
-        name: String::from("Edoh"),
-        age: 22,
-        user_id: 1,
-        is_active: true
-    };    
+    let users = User {
+        name: String::from("martin"),
+        age: 45,
+        user_id: 3,
+        is_active: true,
+    };
 
-    println!("User {:?}", user);
-    println!("Name: {}", user.name);
-    println!("Age: {}", user.age);
-    println!("User ID: {}", user.user_id);
-    println!("Is Active: {}", user.is_active);
+    let king = (10, "martin");
+
+    let king1 = king.0;
+    let king2 = king.1;
+
+    println!("This is the user {:#?}", users);
+    println!("This is the user {} {}", king1, king2);
 }

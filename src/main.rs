@@ -2,11 +2,7 @@
 // use std::io;
 // use std::io::Write;
 
-
-
-
 // mod lib;
-
 
 //mod strings;
 // mod cache;
@@ -19,23 +15,8 @@
 // mod todo;
 // mod unsigned;
 // mod user_struct;
-// mod day_01;
-// use day_01::{structs, enums};
-mod day_02;
-use day_02::{vectors, hashmaps, strings, slices, iteration, quiz};
-
-fn main() {
-    // structs::user_details();
-    // enums::enum_details();
-
-    // vectors::main();
-    // hashmaps::main();
-
-    // strings::main();
-    // slices::main();
-    // iteration::main();
-    quiz::main();
-}
+mod day_01;
+use day_01::{enums, structs};
 
 // fn read_line() -> String {
 //     let mut buffer = String::new();
@@ -77,100 +58,102 @@ fn main() {
 //     todos
 // }
 
-// fn main() {
-//     unsigned::intro_to_u();
-//     signed::intro_to_i();
-//     float::intro_to_float();
-//     string::strings();
-//     user_struct::user_registry();
-//     collections::collections();
+fn main() {
+    // unsigned::intro_to_u();
+    // signed::intro_to_i();
+    // float::intro_to_float();
+    // string::strings();
+    // user_struct::user_registry();
+    // collections::collections();
+    structs::user_details();
+    enums::enums_details();
 
-//     //Book creation
-//     let book = constructor::Book::new("The Rust Programming Language", "Steve Klabnik", 2019);
+    // //Book creation
+    // let book = constructor::Book::new("The Rust Programming Language", "Steve Klabnik", 2019);
 
-//     println!("Title: {}", book.title);
-//     println!("Author: {}", book.author);
-//     println!("Year: {}", book.year);
-//     println!("Likes: {}", book.likes);
+    // println!("Title: {}", book.title);
+    // println!("Author: {}", book.author);
+    // println!("Year: {}", book.year);
+    // println!("Likes: {}", book.likes);
 
-//     let mut todo_task: Vec<todo::Todo> = Vec::new();
+    // let mut todo_task: Vec<todo::Todo> = Vec::new();
 
-//     todo_task = create_todo(todo_task);
-//     todo_task = create_todo(todo_task);
-//     todo_task = create_todo(todo_task);
+    // todo_task = create_todo(todo_task);
+    // todo_task = create_todo(todo_task);
+    // todo_task = create_todo(todo_task);
 
-//     let mut data = Data::<u32, String>::new();
-//     loop {
-//         println!("\n Select an operation");
-//         println!("1. Add");
-//         println!("2. Get");
-//         println!("3. Delete");
-//         println!("4. Update");
-//         println!("5. Quite");
+    // let mut data = Data::<u32, String>::new();
+    // loop {
+    //     println!("\n Select an operation");
+    //     println!("1. Add");
+    //     println!("2. Get");
+    //     println!("3. Delete");
+    //     println!("4. Update");
+    //     println!("5. Quite");
 
-//         println!("Enter choice: ");
-//         io::stdout().flush().unwrap();
+    //     println!("Enter choice: ");
+    //     io::stdout().flush().unwrap();
 
-//         let choice = read_line().trim().to_string();
+    //     let choice = read_line().trim().to_string();
 
-//         match choice.as_str() {
-//             "1" => {
-//                 let key = read_key();
-//                 let value = read_value();
-//                 data.add(key, value);
-//                 println!("Added successfully.");
-//             }
-//             "2" => {
-//                 let key = read_key();
-//                 match data.get(key) {
-//                     Some(v) => println!("Value: {}", v),
-//                     None => println!("Key not found."),
-//                 }
-//             }
-//             "3" => {
-//                 let key = read_key();
-//                 let value = read_value();
-//                 match data.update(key, value) {
-//                     Ok(_) => println!("Update successful"),
-//                     Err(e) => println!("{}", e),
-//                 }
-//             }
-//             "3" => {
-//                 let key = read_key();
-//                 let value = read_value();
-//                 match data.update(key, value) {
-//                     Ok(_) => println!("Updated successfully."),
-//                     Err(e) => println!("{}", e),
-//                 }
-//             }
-//             "4" => {
-//                 let key = read_key();
-//                 match data.delete(key) {
-//                     Ok(v) => println!("Deleted: {}", v),
-//                     Err(e) => println!("{}", e),
-//                 }
-//             }
+    //     match choice.as_str() {
+    //         "1" => {
+    //             let key = read_key();
+    //             let value = read_value();
+    //             data.add(key, value);
+    //             println!("Added successfully.");
+    //         }
+    //         "2" => {
+    //             let key = read_key();
+    //             match data.get(key) {
+    //                 Some(v) => println!("Value: {}", v),
+    //                 None => println!("Key not found."),
+    //             }
+    //         }
+    //         "3" => {
+    //             let key = read_key();
+    //             let value = read_value();
+    //             match data.update(key, value) {
+    //                 Ok(_) => println!("Update successful"),
+    //                 Err(e) => println!("{}", e),
+    //             }
+    //         }
+    //         "3" => {
+    //             let key = read_key();
+    //             let value = read_value();
+    //             match data.update(key, value) {
+    //                 Ok(_) => println!("Updated successfully."),
+    //                 Err(e) => println!("{}", e),
+    //             }
+    //         }
+    //         "4" => {
+    //             let key = read_key();
+    //             match data.delete(key) {
+    //                 Ok(v) => println!("Deleted: {}", v),
+    //                 Err(e) => println!("{}", e),
+    //             }
+    //         }
 
-//             "5" => {
-//                 println!("Exiting...");
-//                 break;
-//             }
-//             _ => println!("Invalid choice."),
-//         }
-//     }
-//     let a: f64 = 20.00;
-//     let b: f64 = 12.00;
-//     println!(
-//         "The summation of {} and {} is {}",
-//         a,
-//         b,
-//         calculator::add(a, b)
-//     );
+    //         "5" => {
+    //             println!("Exiting...");
+    //             break;
+    //         }
+    //         _ => println!("Invalid choice."),
+    //     }
+    // }
+    // let a: f64 = 20.00;
+    // let b: f64 = 12.00;
+    // println!(
+    //     "The summation of {} and {} is {}",
+    //     a,
+    //     b,
+    //     calculator::add(a, b)
+    // );
 
-//     println!(
-//         "The difference between {} and {} is {}",
-//         a,
-//         b,
-//         calculator::subtract(a, b)
-//     );
-// }
+    // println!(
+    //     "The difference between {} and {} is {}",
+    //     a,
+    //     b,
+    //     calculator::subtract(a, b)
+    // );
+}
