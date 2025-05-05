@@ -1,3 +1,5 @@
+mod student_registry;
+use student_registry::student_registry::student_registry;
 // use rust_sessions::cache::Data;
 // use std::io;
 // use std::io::Write;
@@ -156,4 +158,5 @@ fn main() {
     //     b,
     //     calculator::subtract(a, b)
     // );
+    student_registry();
 }
