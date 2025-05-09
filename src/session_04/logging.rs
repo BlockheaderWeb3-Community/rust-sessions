@@ -21,11 +21,16 @@ pub fn log() {
         "hello world".to_string()
     }
 
-    warn!("Resource usage is high");
-    trace!("this is trace");
+    info!("App started");
+    warn!("This is a warning");
+    error!("An error occurred!");
+    debug!("Debug info for developers");
+    trace!("Detailed trace for deep debugging");
 
     // tracing();
 }
+
+// RUST_LOG=debug cargo run
 
 // fn tracing() {
 //     tracing_subscriber::fmt::init();

@@ -11,7 +11,7 @@ struct User {
 
 pub fn using_serde() -> Result<(), serde_json::Error> {
     let user = User {
-        id: 1,
+        id: 3,
         name: "marto".to_string(),
     };
 
