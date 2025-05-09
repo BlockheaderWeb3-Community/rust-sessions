@@ -15,8 +15,14 @@
 // mod todo;
 // mod unsigned;
 // mod user_struct;
-mod day_01;
-use day_01::{enums, structs};
+// mod day_01;
+// use day_01::{enums, structs};
+
+use std::os::unix::process;
+
+mod assignment_task;
+mod session_04;
+extern crate tracing;
 
 // fn read_line() -> String {
 //     let mut buffer = String::new();
@@ -65,8 +71,26 @@ fn main() {
     // string::strings();
     // user_struct::user_registry();
     // collections::collections();
-    structs::user_details();
-    enums::enums_details();
+
+    // session_04::logging::log();
+    // session_04::serde::using_serde();
+
+    if let Err(err) = assignment_task::csv_data_processor::csv_file_reader() {
+        println!("error running file {}", err);
+        std::process::exit(1);
+    }
+
+    if let Err(err) = assignment_task::csv_data_processor::csv_file_writer() {
+        println!("error running file {}", err);
+        std::process::exit(1);
+    }
+
+    if let Err(err) = assignment_task::csv_data_processor::csv_file_reader_using_serde() {
+        println!("error running file {}", err);
+        std::process::exit(1);
+    }
+
+    // session_04::debugging::debugging();
 
     // //Book creation
     // let book = constructor::Book::new("The Rust Programming Language", "Steve Klabnik", 2019);
