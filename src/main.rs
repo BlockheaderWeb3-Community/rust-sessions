@@ -75,21 +75,6 @@ fn main() {
     // session_04::logging::log();
     // session_04::serde::using_serde();
 
-    if let Err(err) = assignment_task::csv_data_processor::csv_file_reader() {
-        println!("error running file {}", err);
-        std::process::exit(1);
-    }
-
-    if let Err(err) = assignment_task::csv_data_processor::csv_file_writer() {
-        println!("error running file {}", err);
-        std::process::exit(1);
-    }
-
-    if let Err(err) = assignment_task::csv_data_processor::csv_file_reader_using_serde() {
-        println!("error running file {}", err);
-        std::process::exit(1);
-    }
-
     // session_04::debugging::debugging();
 
     // //Book creation
