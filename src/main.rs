@@ -17,6 +17,11 @@ use session_three::student_registry::student_registry;
 // mod todo;
 // mod unsigned;
 // mod user_struct;
+// mod day_01;
+// use day_01::{enums, structs};
+
+// mod session_four;
+extern crate tracing;
 mod session_one;
 use session_one::{enums, structs};
 
@@ -67,8 +72,13 @@ fn main() {
     // string::strings();
     // user_struct::user_registry();
     // collections::collections();
-    structs::user_details();
-    enums::enums_details();
+
+    // session_four::serde::using_serde();
+
+    // session_04::logging::log();
+    // session_04::serde::using_serde();
+
+    // session_04::debugging::debugging();
 
     // //Book creation
     // let book = constructor::Book::new("The Rust Programming Language", "Steve Klabnik", 2019);
