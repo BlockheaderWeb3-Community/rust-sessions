@@ -1,3 +1,5 @@
+mod session_three;
+use session_three::student_registry::student_registry;
 // use rust_sessions::cache::Data;
 // use std::io;
 // use std::io::Write;
@@ -15,8 +17,8 @@
 // mod todo;
 // mod unsigned;
 // mod user_struct;
-mod day_01;
-use day_01::{enums, structs};
+mod session_one;
+use session_one::{enums, structs};
 
 // fn read_line() -> String {
 //     let mut buffer = String::new();
@@ -156,4 +158,5 @@ fn main() {
     //     b,
     //     calculator::subtract(a, b)
     // );
+    student_registry();
 }
