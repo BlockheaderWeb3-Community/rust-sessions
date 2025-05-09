@@ -73,6 +73,8 @@ fn main() {
     // user_struct::user_registry();
     // collections::collections();
 
+    // session_four::serde::using_serde();
+
     // session_04::logging::log();
     // session_04::serde::using_serde();
 
