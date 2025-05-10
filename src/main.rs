@@ -1,5 +1,8 @@
-mod session_three;
-use session_three::student_registry::student_registry;
+// mod session_three;
+// use session_three::student_registry::student_registry;
+
+mod projects;
+use projects::csv_processor::{person, processor, utility};
 // use rust_sessions::cache::Data;
 // use std::io;
 // use std::io::Write;
@@ -17,8 +20,8 @@ use session_three::student_registry::student_registry;
 // mod todo;
 // mod unsigned;
 // mod user_struct;
-mod session_one;
-use session_one::{enums, structs};
+// mod session_one;
+// use session_one::{enums, structs};
 
 // fn read_line() -> String {
 //     let mut buffer = String::new();
@@ -67,8 +70,8 @@ fn main() {
     // string::strings();
     // user_struct::user_registry();
     // collections::collections();
-    structs::user_details();
-    enums::enums_details();
+    // structs::user_details();
+    // enums::enums_details();
 
     // //Book creation
     // let book = constructor::Book::new("The Rust Programming Language", "Steve Klabnik", 2019);
@@ -158,5 +161,7 @@ fn main() {
     //     b,
     //     calculator::subtract(a, b)
     // );
-    student_registry();
+    // student_registry();
+
+    processor::process_csv();
 }
