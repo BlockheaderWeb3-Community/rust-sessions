@@ -1,5 +1,7 @@
 mod session_three;
 use session_three::student_registry::student_registry;
+mod session_five;
+
 // use rust_sessions::cache::Data;
 // use std::io;
 // use std::io::Write;
@@ -67,8 +69,13 @@ fn main() {
     // string::strings();
     // user_struct::user_registry();
     // collections::collections();
-    structs::user_details();
-    enums::enums_details();
+    // structs::user_details();
+    // enums::enums_details();
+
+    session_five::traits_variables::trait_variables();
+    session_five::overriding_debug::overriding_debug();
+    session_five::custom_smart_pointer::custom_smart_pointer();
+    session_five::refernce_count::reference_count();
 
     // //Book creation
     // let book = constructor::Book::new("The Rust Programming Language", "Steve Klabnik", 2019);
